@@ -1,9 +1,11 @@
 import streamlit as st
-import joblib
+import pickle
 
-# Load saved model and vectorizer
-model = joblib.load("model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+with open("model.pkl", "rb") as f:
+    model = pickle.load(f)
+
+with open("vectorizer.pkl", "rb") as f:
+    vectorizer = pickle.load(f)
 
 st.title("📰 Fake News Detector")
 
